@@ -1,14 +1,13 @@
-package my.social.social.service;
+package my.social.social.storage.user;
 
 import my.social.social.model.user.User;
 
 import java.util.List;
 
-public interface UserService {
-
+public interface UserStorage {
     User add(User user);
 
-    Long deleteById(Long id);
+    Long delete(Long id);
 
     User getById(Long id);
 

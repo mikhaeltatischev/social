@@ -5,12 +5,14 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Past;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
 @Data
+@EqualsAndHashCode(of = {"id"})
 @AllArgsConstructor
 public class User {
 

@@ -1,7 +1,7 @@
-package my.social.social.service;
+package my.social.social.service.user;
 
 import my.social.social.model.user.User;
-import my.social.social.storage.UserStorage;
+import my.social.social.storage.user.UserStorage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ import java.util.List;
 
 @Service
 @Primary
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     private final UserStorage userStorage;
 
@@ -25,8 +25,8 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public Long deleteById(Long id) {
-        return userStorage.deleteById(id);
+    public Long delete(Long id) {
+        return userStorage.delete(id);
     }
 
     @Override

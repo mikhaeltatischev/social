@@ -1,8 +1,9 @@
-package my.social.social.storage;
+package my.social.social.storage.user;
 
 import my.social.social.exception.UserNotFoundException;
 import my.social.social.model.user.User;
 import my.social.social.model.user.UserRowMapper;
+import my.social.social.storage.user.UserStorage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -35,7 +36,7 @@ public class UserDbStorage implements UserStorage {
     }
 
     @Override
-    public Long deleteById(Long id) {
+    public Long delete(Long id) {
         String sql = "DELETE FROM users WHERE user_id = ?";
 
         jdbcTemplate.update(sql, id);
@@ -62,7 +63,7 @@ public class UserDbStorage implements UserStorage {
 
     @Override
     public User update(User user) {
-        String sql = "UPDATE users SET login = ?, email = ?, phone = ?, username = ?, birthday = ?, city = ? where " +
+        String sql = "UPDATE users SET login = ?, email = ?, phone = ?, username = ?, birthday = ?, city = ? WHERE " +
                 "user_id = ?";
 
         jdbcTemplate.update(sql, user.getLogin(), user.getEmail(), user.getPhone(), user.getUsername(),

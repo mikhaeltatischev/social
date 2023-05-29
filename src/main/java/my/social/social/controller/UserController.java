@@ -2,7 +2,7 @@ package my.social.social.controller;
 
 import jakarta.validation.Valid;
 import my.social.social.model.user.User;
-import my.social.social.service.UserService;
+import my.social.social.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +26,7 @@ public class UserController {
 
     @DeleteMapping("/{id}")
     public Long delete(@PathVariable("id") Long id) {
-        return userService.deleteById(id);
+        return userService.delete(id);
     }
 
     @GetMapping("/{id}")
