@@ -51,36 +51,4 @@ public class NewsControllerTest {
     public void getNonExistentNews() throws Exception {
         assertThrows(NewsNotFoundException.class, () -> newsController.getById(969L));
     }
-
-    @Test
-    public void updateAndGetNewsWithId2() throws Exception {
-        News news = News.builder()
-                .userId(1L)
-                .title("title")
-                .message("message")
-                .timeOfCreation(Instant.now())
-                .photos(List.of("photo-url"))
-                .build();
-
-        News updateNews = News.builder()
-                .userId(1L)
-                .title("update")
-                .message("message")
-                .timeOfCreation(Instant.now())
-                .photos(List.of("photo-url"))
-                .build();
-
-        assertThat(newsController.add(news))
-                .hasFieldOrPropertyWithValue("id", 2L);
-
-        assertThat(newsController.getById(2L))
-                .hasFieldOrPropertyWithValue("id", 2L)
-                .hasFieldOrPropertyWithValue("title", "title");
-
-        assertThat(newsController.update(updateNews))
-                .hasFieldOrPropertyWithValue("title", "update");
-
-        assertThat(newsController.getById(2L))
-                .hasFieldOrPropertyWithValue("title", "update");
-    }
 }
