@@ -33,6 +33,7 @@ public class User {
         values.put("username", username);
         values.put("birthday", birthday);
         values.put("city", city);
+        values.put("phone", phone);
 
         return values;
     }

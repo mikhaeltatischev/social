@@ -1,4 +1,4 @@
-drop table if exists users CASCADE;
+drop table if exists users;
 
 CREATE TABLE users
 (
