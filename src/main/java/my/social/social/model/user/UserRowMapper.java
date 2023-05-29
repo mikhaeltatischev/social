@@ -1,5 +1,6 @@
 package my.social.social.model.user;
 
+import my.social.social.model.user.User;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
